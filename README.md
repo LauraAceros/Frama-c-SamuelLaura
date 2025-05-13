@@ -11,14 +11,14 @@ Samuel Hernando Echeverri Castrillón & Laura Sofía Aceros Monsalve
 
 ## Detailed Instructions for Running Your Solution
 
-To run the code, you must first have Frama-C installed. After doing this, run Frama-C from the console with the C code file using the command frama-c-gui-wp. This will open the Frama-C interface with the .c file ready for selection.
-## Instructions to Run
+To run the code, you must first have Frama-C installed. After doing this, use the following command to open **Frama-C GUI** and launch the verification: `frama-c-gui tarea.c -wp -wp-rte`
 
-1. Open Frama-C GUI or run via terminal.
-2. Use the following command:
+- `-wp`: Activates the **Weakest Precondition** plugin, which verifies the logic of the code against the `requires` and `ensures`.
+- `-wp-rte`: Adds checks for **Runtime Errors**, like signed overflows.
 
-bash
-frama-c -wp -wp-rte prueba.c
+Once the GUI opens you’ll see **green checkmarks** if the verification succeeds and if any **assertions or postconditions** fail, it will be shown in red with diagnostic messages.
+
+Also, you can click each goal under the **WP Goals** panel to explore the results of each proof obligation.
 
 
 ---
@@ -34,7 +34,7 @@ frama-c -wp -wp-rte prueba.c
 
 # Exercise 5: Formal Verification with Frama-C
 
-This is a solution to **Exercise 5**, which focuses on verifying a simple C function using the ACSL specification language and **Frama-C**. The goal is to demonstrate **Hoare-style reasoning**, eliminate possible **integer overflows**, and ensure correctness via **Frama-C's WP (Weakest Precondition) plugin**.
+This is a solution to **Exercise 5**, which focuses on verifying a simple C function using the ACSL specification language and **Frama-C**. The goal is to demonstrate **Hoare-style reasoning**, eliminate possible **integer overflows**, and ensure correctness via **Frama-C's WP and WP-RTE plugins**.
 
 
 ## Problem Statement
